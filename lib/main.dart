@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_design_study/aurora/aurora_container.dart';
-import 'package:flutter_design_study/glassmorphism/colored_glass_container.dart';
-import 'package:flutter_design_study/glassmorphism/gradient_glass_container.dart';
+import 'package:flutter_design_study/glassmorphism/button/colored_glass_button.dart';
+import 'package:flutter_design_study/glassmorphism/container/colored_glass_container.dart';
+import 'package:flutter_design_study/glassmorphism/button/gradient_glass_button.dart';
+import 'package:flutter_design_study/glassmorphism/container/gradient_glass_container.dart';
 
 void main() {
   runApp(const MyApp());
@@ -62,19 +64,57 @@ class MyHomePage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                ColoredGlassContainer(
-                  color: Colors.white.withOpacity(0.2),
-                  width: 200,
-                  height: 200,
+                // ColoredGlassContainer(
+                //   color: Colors.white.withOpacity(0.2),
+                //   width: 200,
+                //   height: 200,
+                // ),
+                // GradientGlassContainer(
+                //   width: 200,
+                //   height: 200,
+                //   beginColor: Colors.white.withOpacity(0.1),
+                //   endColor: Colors.black.withOpacity(0.5),
+                //   beginAlignment: Alignment.bottomLeft,
+                //   endAlignment: Alignment.topRight,
+                //   shadow: true,
+                // ),
+                ColoredGlassButton(
+                  label: Text(
+                    'ボタン',
+                    style: TextStyle(
+                      color: Colors.white.withOpacity(0.5),
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  border: Border.all(
+                    color: Colors.white.withOpacity(0.5),
+                    width: 1.5,
+                  ),
+                  onPressed: () {
+                    debugPrint('ColoredGlassButtonを押下しました。');
+                  },
                 ),
-                GradientGlassContainer(
-                  width: 200,
-                  height: 200,
+                GradientGlassButton(
                   beginColor: Colors.white.withOpacity(0.1),
                   endColor: Colors.black.withOpacity(0.5),
                   beginAlignment: Alignment.bottomLeft,
                   endAlignment: Alignment.topRight,
-                  shadow: true,
+                  label: Text(
+                    'Click me !!',
+                    style: TextStyle(
+                      color: Colors.white.withOpacity(0.5),
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  border: Border.all(
+                    color: Colors.white.withOpacity(0.5),
+                    width: 1.5,
+                  ),
+                  onPressed: () {
+                    debugPrint('GradientGlassButtonを押下しました。');
+                  },
                 ),
               ],
             ),
